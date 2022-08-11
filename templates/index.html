@@ -68,25 +68,39 @@
         <h1 class="text-info text-center py-3">Mars Info<hr/></h1>
         <div class="container">
             <div class="row">
+
+
+              <div class="col-lg-4">
                 
-                <div class="col-lg-6">
+                <h2 class="text-danger text-center">Featured Image from Space:</h2>
+                <a href={{mars.featured_image_url}} target="_blank"><img class="float-start px-3" width="100%" src={{mars.featured_image_url}}></a>
+                
+               
+              </div>
+
+
+                <div class="col-lg-4">
                 
                     <h2 class="text-danger text-center">{{mars.news.first_title}}</h2>
-                    <a href={{mars.featured_image_url}} target="_blank"><img class="float-start px-3" width="60%" src={{mars.featured_image_url}}></a>
+                    <a href={{mars.news.first_photo}} target="_blank"><img class="float-start px-3" width="60%" src={{mars.news.first_photo}}></a>
                     <p>{{mars.news.first_paragraph}}</p>
                    
                 </div>
 
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     {{mars.mars_facts | safe}}
                         
                 </div>
+
+
                 {% for url in mars.hemisphere_images_urls %}
                 <div class="col-lg-3 py-4">
                   <h3>{{url.title}}</h3>
                   <a href={{url.img_url}} target="_blank"><img class="float-start px-3" width="60%" src={{url.img_url}}></a><br>
                 </div>
                 {% endfor %}
+
+                
             </div>
         </div>
     </body>

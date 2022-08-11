@@ -27,6 +27,10 @@ def scrape():
     news_paragraph = soup.find_all('div', class_="article_teaser_body")
     first_news_paragraph = news_paragraph[0].text
     ## first_news_paragraph
+    
+    news_photo = soup.find_all('div', class_="list_image")
+    first_news_photo = news_photo[0].img.get('src')
+    ## first_news_photo
 
 
     # JPL Mars Space Images - Featured Image
@@ -78,7 +82,8 @@ def scrape():
     scraped = {
         'news': {
             'first_title': first_news_title,
-            'first_paragraph': first_news_paragraph
+            'first_paragraph': first_news_paragraph,
+            'first_photo': first_news_photo
         },
         'featured_image_url': featured_image_url,
         'mars_facts':mars_facts,
